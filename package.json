@@ -1,0 +1,29 @@
+{
+  "name": "ask-sdk-router",
+  "version": "1.0.0",
+  "description": "Simple Router for Alexa Skill Kit SDK v2 on Node.js",
+  "main": "index.js",
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fremail/ask-sdk-router.git"
+  },
+  "keywords": [
+    "alexa",
+    "skill",
+    "ASK",
+    "router",
+    "routing"
+  ],
+  "author": "Anton Demushkin <fremail@yandex.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fremail/ask-sdk-router/issues"
+  },
+  "homepage": "https://github.com/fremail/ask-sdk-router#readme"
+}
