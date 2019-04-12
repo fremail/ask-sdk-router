@@ -1,8 +1,13 @@
 
 class Router {
-    constructor(...handlers) {
+    constructor(handlers) {
         this.handlers = handlers;
-        this.currentIndex = -1;
+        this.init();
+    }
+
+    init() {
+        this.handlerKeys = Object.keys(this.handlers).reverse();
+        this.currentHandlerKey = null;
         this.noHandler = true;
     }
 
@@ -12,14 +17,14 @@ class Router {
      * @return {Promise<*>} Returns false in case of no applicable handlers
      */
     async next(handlerInput) {
-        if (this.handlers.length <= this.currentIndex + 1) {
+        if (this.handlerKeys.length === 0) {
             if (this.noHandler) {
                 console.log('Router: no request handler found');
             }
             return false;
         }
-        this.currentIndex++;
-        const handler = this.handlers[this.currentIndex];
+        this.currentHandlerKey = this.handlerKeys.pop();
+        const handler = this.handlers[this.currentHandlerKey];
         if (await handler.canHandle(handlerInput)) {
             this.noHandler = false;
             return await handler.handle(handlerInput);
@@ -34,9 +39,32 @@ class Router {
      * @return {Promise<*>}
      */
     async restart(handlerInput) {
-        this.currentIndex = -1;
-        this.noHandler = true;
+        this.init();
         return await this.next(handlerInput);
+    }
+
+    /**
+     * Jump to selected request handler
+     * @param handlerInput
+     * @param {string|symbol|int} key jump to the handler with selected key
+     * @param {boolean} check set to true if you need to test it with canHandle()
+     * @returns {Promise<boolean|*>}
+     */
+    async jumpTo(handlerInput, key, check = false) {
+        this.init();
+        const index = this.handlerKeys.indexOf(key);
+        if (index === -1) {
+            console.log(`Router: no request handler found with key "${key}"`);
+            return false;
+        }
+        this.handlerKeys = this.handlerKeys.slice(0, index);
+        this.currentHandlerKey = key;
+        const handler = this.handlers[this.currentHandlerKey];
+        if (check && await handler.canHandle(handlerInput)) {
+            return false;
+        }
+        this.noHandler = false;
+        return await handler.handle(handlerInput);
     }
 
     /**
