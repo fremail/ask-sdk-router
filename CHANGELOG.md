@@ -6,6 +6,9 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## Next release
 New features and bug fixes will be here.
 
+## 2.0.1 - 2019-09-15
+- Bugfix: fix `jumpTo()` in case of `check = true`
+
 ## 2.0.0 - 2019-04-12
 - Feature: `jumpTo()`.
 

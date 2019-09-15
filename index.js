@@ -60,7 +60,7 @@ class Router {
         this.handlerKeys = this.handlerKeys.slice(0, index);
         this.currentHandlerKey = key;
         const handler = this.handlers[this.currentHandlerKey];
-        if (check && await handler.canHandle(handlerInput)) {
+        if (check && !await handler.canHandle(handlerInput)) {
             return false;
         }
         this.noHandler = false;
