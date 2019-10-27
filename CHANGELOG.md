@@ -5,6 +5,12 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## Next release
 New features and bug fixes will be here.
+- Feature: run test on travis and send coverage report to codecov
+- Feature: add tests for `next` method.
+- Feature: add tests for `jumpTo` method.
+- Feature: add tests for `interceptor` method.
+- Feature: add tests for `restart` method.
+- Feature: add tests for `handle` method.
 
 ## 2.0.1 - 2019-09-15
 - Bugfix: fix `jumpTo()` in case of `check = true`
