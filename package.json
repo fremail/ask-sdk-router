@@ -7,7 +7,9 @@
     "node": ">=8.0.0"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test-with-coverage": "jest --coverage",
+    "report-coverage": "jest --coverage && codecov"
   },
   "repository": {
     "type": "git",
@@ -27,6 +29,7 @@
   },
   "homepage": "https://github.com/fremail/ask-sdk-router#readme",
   "devDependencies": {
+    "codecov": "^3.6.1",
     "jest": "^24.9.0"
   }
 }

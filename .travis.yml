@@ -1,0 +1,22 @@
+dist: trusty
+
+language: node_js
+
+before_install:
+  - npm install
+
+jobs:
+  include:
+    - stage: test
+      node_js: '8'
+      script: npm run test
+    - stage: test
+      node_js: '10'
+      script: npm run test
+    - stage: test
+      node_js: '12'
+      script:
+        - npm run report-coverage
+
+stages:
+  - test
