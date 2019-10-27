@@ -5,6 +5,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## Next release
 New features and bug fixes will be here.
+
+## 2.1.0 - 2019-10-27
 - Feature: install Travis and Codecov.
 - Feature: add tests for `next` method.
 - Feature: add tests for `jumpTo` method.
