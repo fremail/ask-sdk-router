@@ -1,5 +1,11 @@
 # Router for Alexa Skill Kit SDK v2
 
+![Min Node Version](https://img.shields.io/node/v/ask-sdk-router.svg?style=flat)
+[![Build Status](https://travis-ci.com/fremail/ask-sdk-router.svg?branch=master)](https://travis-ci.com/fremail/ask-sdk-router)
+[![Code Coverage](https://img.shields.io/codecov/c/github/fremail/ask-sdk-router.svg?style=flat)](https://codecov.io/gh/fremail/ask-sdk-router)
+![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/fremail/ask-sdk-router/package.json.svg?style=flat)
+![License](https://img.shields.io/github/license/fremail/ask-sdk-router.svg)
+
 _When you need more than you have._
 
 This library extends the routing in Alexa Skill Kit SDK v2. It has several simple methods to manage the process of request handling.
@@ -11,7 +17,7 @@ Please see [CHANGELOG](CHANGELOG.md) and make sure to read [UPGRADING](UPGRADING
 ## Installation
 
 ```bash
-npm i ask-sdk-router
+npm i --save ask-sdk-router
 ```
 
 ## Usage
