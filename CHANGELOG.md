@@ -5,7 +5,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## Next release
 New features and bug fixes will be here.
-- Feature: run test on travis and send coverage report to codecov
+- Feature: install Travis and Codecov.
 - Feature: add tests for `next` method.
 - Feature: add tests for `jumpTo` method.
 - Feature: add tests for `interceptor` method.
